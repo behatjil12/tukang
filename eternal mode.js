@@ -32,10 +32,10 @@ const start = async () => {
     stay();
 }
 const stay = async () => {
-    for (let index = 1; index < 101; index++) {
+    for (let index = 1; index < 161; index++) {
         document.querySelector("#top-toolbar > colab-connect-button").shadowRoot.querySelector("#connect").click();
+        console.log('wating on ' + index+ ' form 160')
         await sleep(45000);
-        console.log('wating on ' + index+ ' form 100')
     }
     try {
         document.querySelector("#ok").click();
@@ -57,19 +57,19 @@ const stop = async () => {
     //Click on manage sessions
     try {
     document.querySelector("body > div.notebook-vertical > div.notebook-horizontal > div.layout.vertical.grow > colab-tab-layout-container > colab-tab-pane > colab-resizer > div.layout.vertical.grow > iron-pages > colab-tab > colab-shaded-scroller > colab-usage-display").shadowRoot.querySelector("div:nth-child(4) > paper-button:nth-child(1)").click();
-    console('show session')
+    console.log('show session')
     }
     catch(err) {
     document.querySelector("#top-toolbar > colab-connect-button").shadowRoot.querySelector("#connect").click();
-    console('try to show session')
+    console.log('try to show session')
     await sleep(5000);
     try {
         document.querySelector("body > div.notebook-vertical > div.notebook-horizontal > div.layout.vertical.grow > colab-tab-layout-container > colab-tab-pane > colab-resizer > div.layout.vertical.grow > iron-pages > colab-tab > colab-shaded-scroller > colab-usage-display").shadowRoot.querySelector("div:nth-child(4) > paper-button:nth-child(1)").click();
-        console('show session')
+        console.log('show session')
     }
     catch(err) {
         document.querySelector("#top-toolbar > colab-connect-button").shadowRoot.querySelector("#connect").click();
-        console('try to show session')
+        console.log('try to show session')
         await sleep(5000);
         document.querySelector("body > div.notebook-vertical > div.notebook-horizontal > div.layout.vertical.grow > colab-tab-layout-container > colab-tab-pane > colab-resizer > div.layout.vertical.grow > iron-pages > colab-tab > colab-shaded-scroller > colab-usage-display").shadowRoot.querySelector("div:nth-child(4) > paper-button:nth-child(1)").click();
     }
