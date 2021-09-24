@@ -5,7 +5,7 @@ var ts = new Date();
 ts = ts.getTime();
 var titen = [];
 console.tilik = console.log.bind(console);
-const stay = async () => {
+const netep = async () => {
     var re = 0;
     await sleep(3000);
     document.querySelector("#top-toolbar > colab-connect-button").shadowRoot.querySelector("#connect").click();
@@ -24,8 +24,7 @@ const stay = async () => {
     	    if(index % 27 == 0){
 	    	document.querySelector("#top-toolbar > colab-connect-button").shadowRoot.querySelector("#connect").click();
 	    }
-	    console.log('ngenteni nang no ' + index+ ' sekang 900')
-	    console.log('uis di baleni ping ' + re);
+	    console.log('di baleni ping ' + re);
 	    const mentahan = [45535, 47567, 58936, 46932, 63936, 52032, 55623, 37045, 65345];
 	    const ngasal = Math.floor(Math.random() * mentahan.length);
 	    await sleep(mentahan[ngasal]);
@@ -64,8 +63,8 @@ const stay = async () => {
 	    console.log('%cuis mlaku '+ h + ' jm, '+ m + ' mt', 'color: #19bd5d');
     }
     console.log('--------------- Macule Rampung Setengari! ---------------------');
-    console.log('--------------- Lg sipa siap macul maning ---------------------');
+    console.log('--------------- Lg siap siap macul maning ---------------------');
     await sleep(350000);
-    stay();
+    netep();
 }
-stay();
+netep();
