@@ -10,7 +10,7 @@ const netep = async () => {
     await sleep(3000);
     document.querySelector("#top-toolbar > colab-connect-button").shadowRoot.querySelector("#connect").click();
     await sleep(10000);
-    document.querySelector("colab-run-button").click();
+    document.getElementsByTagName("colab-run-button")[1].click();
     await sleep(5000);
     try {
 	document.querySelector("#ok").click();
@@ -40,7 +40,7 @@ const netep = async () => {
 		document.querySelector("#top-toolbar > colab-connect-button").shadowRoot.querySelector("#connect").click();
     		console.log('%cpacule di jaluk', 'color: #db0000');
 		await sleep(mentahan[ngasal] * 1.6);
-    		document.querySelector("colab-run-button").click();
+    		document.getElementsByTagName("colab-run-button")[1].click();;
     		re = re + 1;
             }
             titen = [];
@@ -53,13 +53,13 @@ const netep = async () => {
 	    }
 	    if(index % 33 == 0){
 	    	re = re + 1;
-	    	list = document.getElementsByTagName("colab-run-button")[0].click();
+	    	list = document.getElementsByTagName("colab-run-button")[1].click();
 	    	console.log('%cmolaih mbaleni', 'color: #ccb51f');
 	    }
 	    if(index % 7 == 0){
-	    	const urutan = [1, 2];
+	    	const urutan = [2, 3];
 	    	const ngawur = Math.floor(Math.random() * urutan.length);
-	    	list = document.getElementsByTagName("colab-run-button")[urutan[ngawur]].click();
+	    	document.getElementsByTagName("colab-run-button")[urutan[ngawur]].click();
 	    	console.log('%cNgaso disit', 'color: #ccb51f');
 	    }
 	    var siki = new Date();
