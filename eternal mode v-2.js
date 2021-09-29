@@ -21,26 +21,27 @@ const netep = async () => {
     }
     console.log('--------------- Molaih macul -----------------------')
     for (let index = 1; index < 901; index++) {
-    	    if(index % 27 == 0){
-	    	document.querySelector("#top-toolbar > colab-connect-button").shadowRoot.querySelector("#connect").click();
-	    }
+	    document.querySelector("#top-toolbar > colab-connect-button").shadowRoot.querySelector("#connect").click();
 	    console.log('di baleni ping ' + re);
-	    const mentahan = [45535, 47567, 58936, 46932, 63936, 52032, 55623, 37045, 65345];
+	    const mentahan = [45535, 47567, 58936, 46932, 43936, 52032, 55623, 37045, 33345];
 	    const ngasal = Math.floor(Math.random() * mentahan.length);
 	    await sleep(mentahan[ngasal]);
             console.log = function() {
                 titen.push(Array.from(arguments));
                 console.tilik.apply(console, arguments);
             }
+            var dijaluk = false;
+            var dibalekna = true;
             for (let niliki = 0; niliki < titen.length; niliki++) {
-                if (titen[niliki][0] == 'Runtime disconnected') {
-                	await sleep(mentahan[ngasal] * 1.6);
-			document.querySelector("#top-toolbar > colab-connect-button").shadowRoot.querySelector("#connect").click();
-    			await sleep(10000);
-    			document.querySelector("colab-run-button").click();
-    			console.log('%cpacule di jaluk', 'color: #db0000');
-    			re = re + 1;
-                }
+                if (titen[niliki][0] == 'Runtime disconnected'){dijaluk = true}
+                if (!titen[niliki][0].match('Connected to')){dibalekna = false}
+            }
+            if(dijaluk && !dibalekna){
+		document.querySelector("#top-toolbar > colab-connect-button").shadowRoot.querySelector("#connect").click();
+    		console.log('%cpacule di jaluk', 'color: #db0000');
+		await sleep(mentahan[ngasal] * 1.6);
+    		document.querySelector("colab-run-button").click();
+    		re = re + 1;
             }
             titen = [];
 	    console.clear();
@@ -50,10 +51,16 @@ const netep = async () => {
 	    }
 	    catch(err) {
 	    }
-	    if(index % 60 == 0){
+	    if(index % 33 == 0){
 	    	re = re + 1;
-	    	document.querySelector("colab-run-button").click();
+	    	list = document.getElementsByTagName("colab-run-button")[0].click();
 	    	console.log('%cmolaih mbaleni', 'color: #ccb51f');
+	    }
+	    if(index % 7 == 0){
+	    	const urutan = [1, 2];
+	    	const ngawur = Math.floor(Math.random() * urutan.length);
+	    	list = document.getElementsByTagName("colab-run-button")[urutan[ngawur]].click();
+	    	console.log('%cNgaso disit', 'color: #ccb51f');
 	    }
 	    var siki = new Date();
 	    siki = siki.getTime();
